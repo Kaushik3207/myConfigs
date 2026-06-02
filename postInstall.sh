@@ -1,5 +1,4 @@
 #!/bin/bash
-sudo pacman -Sy code fastfetch fish neovim starship vivaldi libreoffice-still ufw gufw
 echo 'eval "$(starship init bash)"' >>~/.bashrc
 cd ~/.local/share/
 git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
@@ -19,3 +18,4 @@ sudo cp -rf fonts/d /usr/local/share/fonts/
 sudo cp -rf fonts/b /usr/local/share/fonts/
 fc-cache -f
 cp -rf alacritty ~/.config/
+cp -rf kitty ~/.config/
