@@ -1,4 +1,6 @@
+# Required packages are listed below as zypper(openSUSE) commands but the same packages can be installed on any distribution and the rest of the script will work fine. Thank you.
 #!/bin/bash
+sudo zypper in git git-lfs wget curl make gcc gcc-c++ fastfetch starship neovim 
 echo 'eval "$(starship init bash)"' >>~/.bashrc
 cd ~/.local/share/
 git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
@@ -9,13 +11,15 @@ rm ~/.config/fastfetch/config.jsonc
 cd ~/.local/share/
 git clone https://github.com/Kaushik3207/myConfigs.git
 cd myConfigs
+rm -rf .git/
 cp -rfu nvim/ ~/.config/
 cp starship/starship.toml ~/.config/
 cp konsole/kaushiksColourScheme.colorscheme ~/.local/share/konsole/
-mv fonts/'DepartureMono(Default)'/ fonts/d/
-mv fonts/BigTermFont/ fonts/b/
-sudo cp -rf fonts/d /usr/local/share/fonts/
-sudo cp -rf fonts/b /usr/local/share/fonts/
+echo 'fastfetch' >> ~/.bashrc
+# The following set of commands install all the fonts in the fonts directory system-wide
+sudo cp -rf fonts/departureMono /usr/local/share/fonts/
+sudo cp -rf fonts/bigTerm /usr/local/share/fonts/
+sudo cp -rf fonts/terminus /usr/local/share/fonts/
 fc-cache -f
 cp -rf alacritty ~/.config/
 cp -rf kitty ~/.config/
