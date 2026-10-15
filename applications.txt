@@ -1,0 +1,11 @@
+Zed editor
+Intellij idea (install through AUR)
+code / vscodium / vscode (not foss)
+obsidian
+libreoffice-fresh
+kitty
+alacritty
+neovim 
+snapd (AUR)
+# snap apps:
+sudo snap install superproductivity 
